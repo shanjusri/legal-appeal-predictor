@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Judgment Predictor</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="page">
+
+<header class="header">
+<h1>⚖️ Judgment Predictor</h1>
+<p>AI-Powered Legal Case Analysis</p>
+</header>
+
+
+<div class="card">
+
+<h2>Case Description</h2>
+<p class="subtitle">Enter or dictate your case details for prediction</p>
+
+
+<label>Language</label>
+
+<select id="language">
+<option value="en">English</option>
+<option value="hi">Hindi</option>
+<option value="te">Telugu</option>
+<option value="ta">Tamil</option>
+<option value="kn">Kannada</option>
+<option value="ml">Malayalam</option>
+<option value="mr">Marathi</option>
+<option value="bn">Bengali</option>
+<option value="gu">Gujarati</option>
+<option value="pa">Punjabi</option>
+<option value="or">Odia</option>
+<option value="as">Assamese</option>
+<option value="ur">Urdu</option>
+</select>
+
+
+<textarea
+id="caseText"
+placeholder="Describe the case in detail..."
+></textarea>
+
+
+<button id="predictBtn">
+    
+</button>
+
+</div>
+
+
+<div class="result-card" id="resultCard">
+
+<h3>Prediction Result</h3>
+
+<p><b>Label:</b> <span id="label">-</span></p>
+
+<p><b>Case Category:</b> <span id="category">-</span></p>
+
+<p><b>Case Duration:</b> <span id="duration">-</span></p>
+
+<p><b>Confidence Score:</b> <span id="confidence">-</span></p>
+
+</div>
+
+
+<p class="footer">
+This is a simulated prediction for demonstration purposes only.
+</p>
+
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
