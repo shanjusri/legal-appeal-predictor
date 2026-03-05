@@ -1,30 +1,37 @@
-document.getElementById("predictBtn").onclick = async function () {
+document.getElementById("predictBtn").addEventListener("click", async function () {
 
-let text = document.getElementById("caseText").value
-let language = document.getElementById("language").value
+    const caseText = document.getElementById("caseText").value.trim();
 
+    if(caseText === ""){
+        alert("Please enter case description");
+        return;
+    }
 
-let response = await fetch("https://legal-appeal-predictor-2.onrender.com/predict", {
+    try{
 
-method: "POST",
+        const response = await fetch("/predict",{
+            method:"POST",
+            headers:{
+                "Content-Type":"application/json"
+            },
+            body: JSON.stringify({
+                text: caseText
+            })
+        });
 
-headers: {
-"Content-Type": "application/json"
-},
+        const data = await response.json();
 
-body: JSON.stringify({
-text: text,
-language: language
-})
+        document.getElementById("label").innerText = data.label;
+        document.getElementById("category").innerText = data.category;
+        document.getElementById("duration").innerText = data.duration;
+        document.getElementById("confidence").innerText = data.confidence;
 
-})
+        document.getElementById("resultCard").style.display="block";
 
-let data = await response.json()
+    }
+    catch(error){
+        console.error(error);
+        alert("Prediction failed");
+    }
 
-
-document.getElementById("label").innerText = data.label
-document.getElementById("category").innerText = data.category
-document.getElementById("duration").innerText = data.duration
-document.getElementById("confidence").innerText = data.confidence
-
-}
+});
