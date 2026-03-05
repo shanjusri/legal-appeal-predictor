@@ -1,4 +1,4 @@
-ddocument.getElementById("predictBtn").onclick = async function () {
+document.getElementById("predictBtn").onclick = async function () {
 
 let text = document.getElementById("caseText").value
 let language = document.getElementById("language").value
