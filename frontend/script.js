@@ -4,7 +4,7 @@ let text = document.getElementById("caseText").value
 let language = document.getElementById("language").value
 
 
-let response = await fetch("http://127.0.0.1:8000/predict", {
+let response = await fetch("https://legal-appeal-predictor-2-07ap.onrender.com/predict", {
 
 method: "POST",
 
